@@ -1,4 +1,4 @@
 module.exports = {
 home: require('./home.controller'),
-serch: require('./serch.controller')
+search: require('./search.controller')
 };

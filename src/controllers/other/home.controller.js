@@ -1,11 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { readData } = require("../../data");
+
+
+
 
 module.exports = (req, res) => {
-    res.render()
+    const products = readData()
+    const productsInSale = products.filter(p => category === 'in-sale') 
+    const productsVisited = products.filter(p => category === 'visited') 
+    res.render('other/home',{
+        productsInSale, productsVisited
+    })
     };

@@ -19,7 +19,8 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
+app.set('views', path.join(__dirname, './views')); // Define la ubicación de la carpeta de las Vistas
+
 
 
 
@@ -47,7 +48,7 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('other/error');
 });
 
 // ************ exports app - dont'touch ************

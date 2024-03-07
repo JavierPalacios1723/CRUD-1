@@ -3,26 +3,16 @@ const express = require('express');
 const router = express.Router();
 
 // ************ Controller Require ************
-const productsController = require('../controllers/productsController');
+const {list, detail,} = require('../controllers/products')
 
 /*** GET ALL PRODUCTS ***/ 
-router.???('/', productsController.index); 
+router.get('/', list); 
 
-/*** CREATE ONE PRODUCT ***/ 
-router.???('/???/', productsController.create); 
-router.???('/', productsController.store); 
+router.get('/detalle/:id', detail); 
 
 
-/*** GET ONE PRODUCT ***/ 
-router.???('/:id/', productsController.detail); 
-
-/*** EDIT ONE PRODUCT ***/ 
-router.???('/:id/???', productsController.edit); 
-router.???('/:id', productsController.update); 
 
 
-/*** DELETE ONE PRODUCT***/ 
-router.???('/:id', productsController.destroy); 
 
 
 module.exports = router;
