@@ -7,6 +7,6 @@ const { home, search } = require('../controllers/other')
 
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', home); 
-router.get('/search', search);
+router.get('/buscar', search);
 
 module.exports = router;

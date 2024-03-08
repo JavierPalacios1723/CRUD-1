@@ -6,9 +6,13 @@ const { readData } = require("../../data");
 
 module.exports = (req, res) => {
     const products = readData()
-    const productsInSale = products.filter(p => category === 'in-sale') 
-    const productsVisited = products.filter(p => category === 'visited') 
+    const productsInSale = products.filter(p => p.category === "in-sale") 
+    const productsVisited = products.filter(p => p.category === 'visited') 
     res.render('other/home',{
-        productsInSale, productsVisited
+        productsInSale, productsVisited, toThousand
     })
     };
+
+
+
+    
