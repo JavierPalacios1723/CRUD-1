@@ -1,7 +1,10 @@
-
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { readData, saveData } = require("../../data")
 
 module.exports = (req, res) => {
-    res.render()
-    };
+    const { id } = req.params
+    const products = readData()
+    const productFilter = products.filter(p => p.id !== +id)
+    
+    saveData(productFilter)
+    res.redirect('/')
+}

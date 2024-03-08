@@ -6,7 +6,7 @@ const router = express.Router();
 const {list, detail,} = require('../controllers/products')
 
 /*** GET ALL PRODUCTS ***/ 
-router.get('/', list); 
+router.get('/productos', list); 
 
 router.get('/detalle/:id', detail); 
 
